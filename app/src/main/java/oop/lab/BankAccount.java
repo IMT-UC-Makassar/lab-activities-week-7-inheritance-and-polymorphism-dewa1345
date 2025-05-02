@@ -12,14 +12,13 @@ public abstract class BankAccount {
     }
 
     public void deposit(double amount) {
+        if (amount > balance) {
+            throw new IllegalArgumentException("Insufficient funds");
+        }
         balance += amount;
     }
 
     public void withdraw(double amount) {
-        if (amount > balance) {
-            System.out.println("Insufficient funds");
-            return;
-        }
         balance -= amount;
     }
 
