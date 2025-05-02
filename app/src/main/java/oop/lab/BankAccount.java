@@ -15,6 +15,9 @@ public abstract class BankAccount {
         if (amount > balance) {
             throw new IllegalArgumentException("Insufficient funds");
         }
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive");
+        }
         balance += amount;
     }
 
